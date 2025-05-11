@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Праздник в каждый дом - Организация детских праздников</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f3f3;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background-color: #ff6b88;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd3d3;
+        }
+        
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(rgba(255,107,136,0.8), rgba(255,107,136,0.8)), url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd3d3;
+            color: #ff6b88;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: fadeIn 2.5s ease;
+        }
+        
+        .btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Секция "Как это работает" */
+        .how-it-works {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #ff6b88;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #ff6b88;
+            margin: 15px auto;
+        }
+        
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .step {
+            flex: 0 0 calc(20% - 20px);
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #ff6b88;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: #ff6b88;
+        }
+        
+        /* Секция "О компании" */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 0 0 60%;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 0 0 40%;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .motto {
+            font-style: italic;
+            font-size: 24px;
+            color: #ff6b88;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        /* Форма поиска */
+        .search-form {
+            background-color: #ff6b88;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 80px 0;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .form-col {
+            flex: 0 0 calc(33.333% - 20px);
+            margin: 0 10px;
+        }
+        
+        /* Секция акций */
+        .promotions {
+            padding: 80px 0;
+        }
+        
+        .promo-cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .promo-card {
+            flex: 0 0 calc(33.333% - 30px);
+            margin: 0 15px 30px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .promo-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .promo-card:hover .promo-image img {
+            transform: scale(1.1);
+        }
+        
+        .promo-content {
+            padding: 20px;
+        }
+        
+        .promo-content h3 {
+            margin-bottom: 10px;
+            color: #ff6b88;
+        }
+        
+        .promo-content .btn {
+            margin-top: 15px;
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+        
+        /* Форма подписки */
+        .subscribe {
+            background-color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .subscribe-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .subscribe-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ffd3d3;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .subscribe-btn {
+            padding: 15px 30px;
+            background-color: #ff6b88;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .subscribe-btn:hover {
+            background-color: #ff4d73;
+        }
+        
+        /* Подвал сайта */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 0 0 calc(25% - 30px);
+            margin: 0 15px;
+        }
+        
+        .footer-col h3 {
+            color: #ff6b88;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: white;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #ff6b88;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        
+        .step:nth-child(1) { animation-delay: 0.2s; }
+        .step:nth-child(2) { animation-delay: 0.4s; }
+        .step:nth-child(3) { animation-delay: 0.6s; }
+        .step:nth-child(4) { animation-delay: 0.8s; }
+        .step:nth-child(5) { animation-delay: 1s; }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .step {
+                flex: 0 0 calc(33.333% - 20px);
+            }
+            
+            .about-text, .about-image {
+                flex: 0 0 100%;
+            }
+            
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .promo-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+            
+            .footer-col {
+                flex: 0 0 calc(50% - 30px);
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .form-col {
+                flex: 0 0 calc(50% - 20px);
+                margin-bottom: 15px;
+            }
+            
+            .subscribe-form {
+                flex-direction: column;
+            }
+            
+            .subscribe-input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .subscribe-btn {
+                border-radius: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .step {
+                flex: 0 0 100%;
+            }
+            
+            .promo-card {
+                flex: 0 0 100%;
+            }
+            
+            .footer-col {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Праздник в каждый дом</div>
+            <nav>
+    <ul>
+        <li><a href="index.html" id="home-btn" data-nav-item="home">Главная</a></li>
+        <li><a href="promotions.html" id="promo-btn" data-nav-item="promo">Акции</a></li>
+        <li><a href="search.html" id="search-btn" data-nav-item="search">Поиск</a></li>
+        <li><a href="booking.html" id="booking-btn" data-nav-item="booking">Бронирования</a></li>
+    </ul>
+</nav>
+        </div>
+    </header>
+    
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1>Подарим волшебство для Ваших детей!</h1>
+                <p>Организуем незабываемый праздник для вашего ребенка</p>
+                <a href="search.html" class="btn">Забронировать сейчас</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "Как это работает" -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как забронировать праздник</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Выберите дату</h3>
+                    <p>Укажите удобную дату проведения праздника</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Количество гостей</h3>
+                    <p>Определите количество детей и взрослых</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Выберите локацию</h3>
+                    <p>Подберите подходящее место для праздника</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Зарезервируйте зону</h3>
+                    <p>Выберите конкретную зону в локации</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Дополнительные услуги</h3>
+                    <p>Добавьте аниматоров, питание и другие услуги</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Секция "О компании" -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">О нашей компании</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Компания "Праздник в каждый дом" специализируется на организации детских праздников, делая каждый день вашего ребенка незабываемым. Мы работаем с 2010 года и за это время организовали более 5000 мероприятий.</p>
+                    <p>Наша команда профессиональных аниматоров, декораторов и организаторов поможет вам провести праздник любой сложности и масштаба.</p>
+                    <div class="motto">"Подарим волшебство для Ваших детей!"</div>
+                </div>
+                <div class="about-image">
+                    <img src="/img/семья.jpg" alt="О нашей компании">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Форма поиска -->
+    <section class="container">
+        <div class="search-form">
+            <h2 style="color: white; margin-bottom: 30px; text-align: center;">Найти подходящую локацию</h2>
+            <form action="search.html" method="GET">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="region">Регион</label>
+                            <select id="region" class="form-control" name="region" required>
+                                <option value="">Выберите регион</option>
+                                <option value="moscow">Москва</option>
+                                <option value="spb">Санкт-Петербург</option>
+                                <option value="kazan">Казань</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="date">Дата мероприятия</label>
+                            <input type="date" id="date" class="form-control" name="date" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="guests">Количество гостей</label>
+                            <input type="number" id="guests" class="form-control" name="guests" min="1" max="50" placeholder="До 50 человек" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn" style="display: block; width: 200px; margin: 30px auto 0; background-color: white; color: #ff6b88;">Найти локации</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Секция акций -->
+    <section class="promotions">
+        <div class="container">
+            <h2 class="section-title">Наши акции</h2>
+            <div class="promo-cards">
+                <div class="promo-card">
+                    <div class="promo-image">
+                        <img src="/img/скидка 20.jpg" alt="Акция 1">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Скидка 20% в будни</h3>
+                        <p>Забронируйте праздник с понедельника по четверг и получите скидку 20% на все услуги.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-image">
+                        <img src="/img/аниматор.jpg" alt="Акция 2">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Второй час аниматора бесплатно</h3>
+                        <p>При заказе аниматора на 2 часа, второй час - в подарок!</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="promo-card">
+                    <div class="promo-image">
+                        <img src="/img/скидка.jpg" alt="Акция 3">
+                    </div>
+                    <div class="promo-content">
+                        <h3>Семейная скидка</h3>
+                        <p>При заказе праздника для двух детей из одной семьи - скидка 15% на второй праздник.</p>
+                        <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Форма подписки -->
+    <section class="subscribe">
+        <div class="container">
+            <h2 class="section-title">Подпишитесь на закрытые акции</h2>
+            <p style="margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">Получайте эксклюзивные предложения и скидки первыми, подписавшись на нашу рассылку.</p>
+            <form class="subscribe-form">
+                <input type="email" class="subscribe-input" placeholder="Ваш email" required>
+                <button type="submit" class="subscribe-btn">Подписаться</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>О компании</h3>
+                    <p style="color: #ccc;">Организация детских праздников с 2010 года. Более 5000 успешных мероприятий.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i>✆</i> 8 (800) 111-20-20</p>
+                        <p><i>✉</i> info@prazdnik.ru</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="search.html">Поиск</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Часы работы</h3>
+                    <p style="color: #ccc;">Пн-Пт: 9:00 - 21:00<br>Сб-Вс: 10:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Праздник в каждый дом. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
